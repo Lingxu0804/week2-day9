@@ -1,7 +1,7 @@
 [project]
 name = "week2-day9"
 version = "0.1.0"
-description = "Add your description here"
+description = "FastAPI calculator API for learning Pydantic validation, HTTP, and pytest."
 readme = "README.md"
 authors = [
     { name = "Lingxu", email = "469192643@qq.com" }
@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "fastapi[standard]>=0.162.0",
+    "pydantic>=2.14.1",
 ]
 
 [project.scripts]
@@ -17,3 +18,13 @@ week2-day9 = "week2_day9:main"
 [build-system]
 requires = ["uv_build>=0.13.1,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
